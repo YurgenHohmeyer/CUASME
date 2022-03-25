@@ -25,6 +25,7 @@ board2 = neopixel.NeoPixel(pin2, numpixels, brightness=bright, auto_write=aw, pi
 cuGold = (255,206,0,0)
 cuGreen = (0,79,66,0)
 backgroundColor = (200,200,200,0)
+OFF = (0,0,0,0)
 
 letterColor = cuGreen
 
@@ -55,3 +56,8 @@ board1[9,10,13,14,17:23,25,27,28,30,33,38,41,46,49,54] = letterColor
 # Letter E
 board2[0:63] = backgroundColor
 board2[10:14,18,26:30,34,42,50:54] = letterColor
+
+time.sleep(5)
+
+board1.fill(OFF)
+board2.fill(OFF)
