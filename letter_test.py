@@ -20,6 +20,14 @@ aw = True
 board1 = neopixel.NeoPixel(pin1, numpixels, brightness=bright, auto_write=aw, pixel_order=order)
 board2 = neopixel.NeoPixel(pin2, numpixels, brightness=bright, auto_write=aw, pixel_order=order)
 
+def setpixels(board, locs, color):
+    if isinstance(locs, slice):
+        board[locs] = color * len(board[locs])
+    elif isinstance(locs, list):
+        for loc in locs:
+            setpixels(board, loc, color)
+    else:
+        board[locs] = color
 
 # For Neopixel Raspberry Pi Code
 cuGold = (255,206,0,0)
@@ -30,32 +38,32 @@ OFF = (0,0,0,0)
 letterColor = cuGreen
 
 # Letter C
-board1[0:63] = backgroundColor
-board1[10:14,18,26,34,42,50:54] = letterColor
+board1.fill(backgroundColor)
+setpixels(board1, [10:14,18,26,34,42,50:54], letterColor)
 
 # Letter U
-board2[0:63] = backgroundColor
-board2[10,13,18,21,26,29,34,37,42,45,50,51:54] = letterColor
+board2.fill(backgroundColor)
+setpixels(board2, [10,13,18,21,26,29,34,37,42,45,50,51:54], letterColor)
 
 time.sleep(10)
 
 # Letter A
-board1[0:63] = backgroundColor
-board1[10:14,18,21,26:30,34,37,42,45,50,53] = letterColor
+board1.fill(backgroundColor)
+setpixels(board1, [10:14,18,21,26:30,34,37,42,45,50,53], letterColor)
 
 # Letter S
-board2[0:63] = backgroundColor
-board2[10:14,18,26:29,37,45,50:54] = letterColor
+board2.fill(backgroundColor)
+setpixels(board2, [10:14,18,26:29,37,45,50:54], letterColor)
 
 time.sleep(5)
 
 # Letter M
-board1[0:63] = backgroundColor
-board1[9,10,13,14,17:23,25,27,28,30,33,38,41,46,49,54] = letterColor
+board1.fill(backgroundColor)
+setpixels(board1, [9,10,13,14,17:23,25,27,28,30,33,38,41,46,49,54], letterColor)
 
 # Letter E
-board2[0:63] = backgroundColor
-board2[10:14,18,26:30,34,42,50:54] = letterColor
+board2.fill(backgroundColor)
+setpixels(board2, [10:14,18,26:30,34,42,50:54], letterColor)
 
 time.sleep(5)
 
