@@ -34,4 +34,4 @@ board2 = neopixel.NeoPixel(pin2,
 while True:
 	letter_test(board1, board2)
 	image_test(board1, board2)
-	show_image('pepe.jpg', board1)
+	# show_image('pepe.jpg', board1)

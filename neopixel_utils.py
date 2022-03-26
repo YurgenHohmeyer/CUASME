@@ -1,4 +1,4 @@
-from time import time
+import time
 import cv2
 
 # Turn off pixels
