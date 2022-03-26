@@ -3,6 +3,7 @@ import board
 import neopixel
 
 from neopixel_tests import letter_test, image_test
+from neopixel_utils import show_image
 
 # We're using GPIO18 and GPIO21 for the two boards
 pin1 = board.D18
@@ -15,7 +16,7 @@ order = neopixel.GRBW
 numpixels = 64
 
 # Brightness and automatically set colors
-bright = 0.2
+bright = 0.75
 aw = False
 
 # Board setup
@@ -33,4 +34,4 @@ board2 = neopixel.NeoPixel(pin2,
 while True:
 	letter_test(board1, board2)
 	image_test(board1, board2)
-	time.sleep(5)
+	show_image('pepe.jpg', board1)
