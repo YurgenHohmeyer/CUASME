@@ -131,7 +131,7 @@ def image_test(board1, board2):
 					pixel_color = [0, 0, 0, 0]
 
 					for channel in range(0, 3):
-						pixel_color[channel] = image[y][x][channel]
+						pixel_color[channel] = image[y][x][-channel]
 
 					fill_colors.append(pixel_color)
 
