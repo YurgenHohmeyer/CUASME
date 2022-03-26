@@ -119,7 +119,7 @@ def image_test(board1, board2):
 
 		if not img.name.lower().endswith('.png'):
 			continue
-		print(img.name)
+
 		for side in ['left', 'right']:
 			image = cv2.imread(os.path.join('pong_imgs', side, img.name))
 
@@ -145,4 +145,9 @@ def image_test(board1, board2):
 		board1.show()
 		board2.show()
 
-		time.sleep(1)
+		time.sleep(0.2)
+
+	board1.fill(OFF)
+	board2.fill(OFF)
+	board1.show()
+	board2.show()

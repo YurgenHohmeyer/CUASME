@@ -30,5 +30,7 @@ board2 = neopixel.NeoPixel(pin2,
                            auto_write=aw,
                            pixel_order=order)
 
-# letter_test(board1, board2)
-image_test(board1, board2)
+while True:
+	letter_test(board1, board2)
+	image_test(board1, board2)
+	time.sleep(5)
