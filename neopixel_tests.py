@@ -112,18 +112,16 @@ def image_test(board1, board2):
 	board2 : NeoPixel
 		Second board
 	"""
-	for img in os.scandir('pong_imgs'):
+	for img in sorted(os.scandir('pong_imgs'), key=lambda e: e.name):
 
 		if img.is_dir():
 			continue
 
 		if not img.name.lower().endswith('.png'):
 			continue
-
 		print(img.name)
-
 		for side in ['left', 'right']:
-			image = cv2.imread(os.path.join('Pong', side, img.name))
+			image = cv2.imread(os.path.join('pong_imgs', side, img.name))
 
 			fill_colors = []
 
@@ -147,4 +145,4 @@ def image_test(board1, board2):
 		board1.show()
 		board2.show()
 
-		time.sleep(0.1)
+		time.sleep(1)

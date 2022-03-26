@@ -15,7 +15,7 @@ order = neopixel.GRBW
 numpixels = 64
 
 # Brightness and automatically set colors
-bright = 0.5
+bright = 0.2
 aw = False
 
 # Board setup
