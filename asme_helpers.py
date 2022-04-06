@@ -26,6 +26,10 @@ def setpixels(board, locs, color):
 		Location, slice of locations, or list of locations to set
 	color : Tuple
 		Tuple of RGB(W) colors to set
+		r	Red brightness, 0 = minimum (off), 255 = maximum.
+		g	Green brightness, 0 = minimum (off), 255 = maximum.
+		b	Blue brightness, 0 = minimum (off), 255 = maximum.
+		w	White brightness, 0 = minimum (off), 255 = maximum.
 	"""
 	if isinstance(locs, slice):
 		board[locs] = [color] * len(board[locs])
