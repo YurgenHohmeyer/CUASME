@@ -15,7 +15,7 @@ import cv2
 OFF = (0, 0, 0, 0)
 
 
-def setpixels(board, locs, color):
+def setpixels(board, locs, color, window):
 	"""Sets locations on a board to a given color.
 
 	Parameters
@@ -40,7 +40,7 @@ def setpixels(board, locs, color):
 		board[locs] = color
 
 
-def show_image(imgpath, board):
+def show_image(imgpath, board, window):
 	"""Show an image on the board.
 
 	Shrinks an image to 64x64 pixels and sets each pixel to the color of the image.
