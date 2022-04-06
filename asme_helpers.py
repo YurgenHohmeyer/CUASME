@@ -65,5 +65,3 @@ def show_image(imgpath, board):
 
 	for i, color in enumerate(fill_colors):
 		setpixels(board, i, color)
-
-	board.show()
